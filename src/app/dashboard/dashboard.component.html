@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="form-main-cover">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 form-wrapper">
+                <h1>Dashboard</h1>
+                <div class="form-group">
+                    <label>Market:</label>
+                    <mat-form-field>
+                        <mat-select placeholder="Select market for search" [(ngModel)]='optionSelected'>
+                            <mat-option *ngFor="let option of options" [value]="option">
+                                {{ option}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                <label >Competitor's website link:</label>
+                <mat-input-container >
+                    <input type="text" matInput  [(ngModel)]="websiteurl" placeholder="Enter website url to search" required>
+                </mat-input-container>
+                </div>
+              <button type="button" class="btn btn-primary btn-lg" (click)="onSearch()" >Search</button>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div> 
+<div class="container">
+    <div class="form-main-cover">
+        <div class="col-sm-3"></div>
+            <div class="col-sm-6 search_results_wrapper">
+                <h4> Markets </h4>
+                <div class="form-group result_cover_list" *ngFor="let market of markets; let i=index">
+                    <h4> Title: {{market.title}} </h4>
+                    <p><b>Country: </b>{{market.country}}</p>
+                    <p><b>Report type: </b>{{market.report_type }}</p>
+                    <p><b>Market url: </b><a href="{{market.click_url}}">{{market.click_url}}</a></p>
+                </div>
+            </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-main-cover">    
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 search_results_wrapper">
+            <h4> Websites </h4>
+            <div class="form-group">
+             
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
